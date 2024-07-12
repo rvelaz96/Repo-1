@@ -5,83 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circle Frame</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #282c34;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-        }
-
-        #circle-container {
-            position: relative;
-            width: 400px;
-            height: 400px;
+        .circle-frame {
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
             border-radius: 50%;
-            overflow: hidden;
-            transform: rotate(-15deg); /* Adjust to align first key at the top */
+            position: relative;
         }
 
-        .key {
+        .segment {
             position: absolute;
-            width: 50%;
-            height: 50%;
-            background-color: #444;
-            clip-path: polygon(50% 50%, 100% 0, 100% 100%);
-            transform-origin: 100% 100%;
-            cursor: pointer;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: background-color 0.3s, transform 0.3s;
-            user-select: none;
-            transform: rotate(calc(var(--i) * 30deg));
+            width: 100%;
+            height: 100%;
+            clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+            border: 1px solid black;
+            box-sizing: border-box;
         }
 
-        .key:hover {
-            background-color: #666;
-        }
-
-        .highlight {
-            background-color: #00aaff;
-        }
-
-        .selected {
-            background-color: #ffaa00;
-        }
-
-        /* Position each key in the circle */
-        .key:nth-child(1) { --i: 0; }
-        .key:nth-child(2) { --i: 1; }
-        .key:nth-child(3) { --i: 2; }
-        .key:nth-child(4) { --i: 3; }
-        .key:nth-child(5) { --i: 4; }
-        .key:nth-child(6) { --i: 5; }
-        .key:nth-child(7) { --i: 6; }
-        .key:nth-child(8) { --i: 7; }
-        .key:nth-child(9) { --i: 8; }
-        .key:nth-child(10) { --i: 9; }
-        .key:nth-child(11) { --i: 10; }
-        .key:nth-child(12) { --i: 11; }
+        .segment:nth-child(1) { transform: rotate(0deg); }
+        .segment:nth-child(2) { transform: rotate(36deg); }
+        .segment:nth-child(3) { transform: rotate(72deg); }
+        .segment:nth-child(4) { transform: rotate(108deg); }
+        .segment:nth-child(5) { transform: rotate(144deg); }
+        .segment:nth-child(6) { transform: rotate(180deg); }
+        .segment:nth-child(7) { transform: rotate(216deg); }
+        .segment:nth-child(8) { transform: rotate(252deg); }
+        .segment:nth-child(9) { transform: rotate(288deg); }
+        .segment:nth-child(10) { transform: rotate(324deg); }
     </style>
 </head>
 <body>
-    <div id="circle-container">
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
-        <div class="key"></div>
+    <div class="circle-frame">
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
+        <div class="segment"></div>
     </div>
 </body>
 </html>
