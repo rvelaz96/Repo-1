@@ -6,22 +6,31 @@ body {
     background-color: #282c34;
     color: white;
     font-family: Arial, sans-serif;
+    margin: 0;
 }
 
-#circle-of-fifths {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    width: 300px;
-    text-align: center;
+#circle-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .key {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
     border: 1px solid #fff;
-    padding: 20px;
+    border-radius: 50%;
+    text-align: center;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s;
     user-select: none;
+    transform: rotate(calc(30deg * var(--i))) translate(0, -150px) rotate(calc(-30deg * var(--i)));
 }
 
 .key:hover {
