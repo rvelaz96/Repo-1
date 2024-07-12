@@ -1,61 +1,87 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #282c34;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Frame</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
 
-#circle-container {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    border-radius: 50%;
-    overflow: hidden;
-    transform: rotate(-15deg); /* Adjust to align first key at the top */
-}
+        #circle-container {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            overflow: hidden;
+            transform: rotate(-15deg); /* Adjust to align first key at the top */
+        }
 
-.key {
-    position: absolute;
-    width: 50%;
-    height: 50%;
-    background-color: #444;
-    clip-path: polygon(50% 50%, 100% 0, 100% 100%);
-    transform-origin: 100% 100%;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s, transform 0.3s;
-    user-select: none;
-    transform: rotate(calc(var(--i) * 30deg));
-}
+        .key {
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            background-color: #444;
+            clip-path: polygon(50% 50%, 100% 0, 100% 100%);
+            transform-origin: 100% 100%;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.3s;
+            user-select: none;
+            transform: rotate(calc(var(--i) * 30deg));
+        }
 
-.key:hover {
-    background-color: #666;
-}
+        .key:hover {
+            background-color: #666;
+        }
 
-.highlight {
-    background-color: #00aaff;
-}
+        .highlight {
+            background-color: #00aaff;
+        }
 
-.selected {
-    background-color: #ffaa00;
-}
+        .selected {
+            background-color: #ffaa00;
+        }
 
-/* Position each key in the circle */
-.key:nth-child(1) { --i: 0; }
-.key:nth-child(2) { --i: 1; }
-.key:nth-child(3) { --i: 2; }
-.key:nth-child(4) { --i: 3; }
-.key:nth-child(5) { --i: 4; }
-.key:nth-child(6) { --i: 5; }
-.key:nth-child(7) { --i: 6; }
-.key:nth-child(8) { --i: 7; }
-.key:nth-child(9) { --i: 8; }
-.key:nth-child(10) { --i: 9; }
-.key:nth-child(11) { --i: 10; }
-.key:nth-child(12) { --i: 11; }
+        /* Position each key in the circle */
+        .key:nth-child(1) { --i: 0; }
+        .key:nth-child(2) { --i: 1; }
+        .key:nth-child(3) { --i: 2; }
+        .key:nth-child(4) { --i: 3; }
+        .key:nth-child(5) { --i: 4; }
+        .key:nth-child(6) { --i: 5; }
+        .key:nth-child(7) { --i: 6; }
+        .key:nth-child(8) { --i: 7; }
+        .key:nth-child(9) { --i: 8; }
+        .key:nth-child(10) { --i: 9; }
+        .key:nth-child(11) { --i: 10; }
+        .key:nth-child(12) { --i: 11; }
+    </style>
+</head>
+<body>
+    <div id="circle-container">
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+    </div>
+</body>
+</html>
