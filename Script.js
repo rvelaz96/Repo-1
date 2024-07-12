@@ -1,36 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const keys = document.querySelectorAll('.key');
+document.addEventListener('DOMContentLoaded', function() {
+    const circleFrame = document.getElementById('circleFrame');
+    const segments = 10; // Number of segments
 
-    const circleOfFifths = {
-        "C": ["G", "F", "A Minor"],
-        "G": ["D", "C", "E Minor"],
-        "D": ["A", "G", "B Minor"],
-        "A": ["E", "D", "F# Minor"],
-        "E": ["B", "A", "C# Minor"],
-        "B": ["Gb", "E", "G# Minor"],
-        "Gb": ["Db", "B", "D# Minor"],
-        "Db": ["Ab", "Gb", "A# Minor"],
-        "Ab": ["Eb", "Db", "F Minor"],
-        "Eb": ["Bb", "Ab", "C Minor"],
-        "Bb": ["F", "Eb", "G Minor"],
-        "F": ["C", "Bb", "D Minor"],
-    };
-
-    keys.forEach(key => {
-        key.addEventListener('click', () => {
-            const currentKey = key.getAttribute('data-key');
-            const compatibleKeys = circleOfFifths[currentKey];
-
-            // Remove previous highlights
-            keys.forEach(k => k.classList.remove('highlight', 'selected'));
-
-            // Highlight the selected key
-            key.classList.add('selected');
-
-            // Highlight compatible keys
-            compatibleKeys.forEach(ck => {
-                document.querySelector(`.key[data-key="${ck}"]`).classList.add('highlight');
-            });
-        });
-    });
+    for (let i = 0; i < segments; i++) {
+        const segment = document.createElement('div');
+        segment.classList.add('segment');
+        segment.style.transform = `rotate(${(360 / segments) * i}deg)`;
+        circleFrame.appendChild(segment);
+    }
 });
+
